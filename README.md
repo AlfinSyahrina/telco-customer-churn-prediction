@@ -33,10 +33,10 @@ Database: PostgreSQL (pg8000).
 
 Tool: Power BI Desktop.
 
-Dataset: Telco Customer Churn Dataset (Kaggle)
+Dataset: [Telco Customer Churn Dataset (Kaggle)](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
 📊 Dashboard Visualization
-![Telco Churn Dashboard](dashboard/Nama_File_Gambar.png)
+![Telco Churn Dashboard](dashboard/Churn_Risk_Dashboard.png)
 Dashboard operasional yang menunjukkan daftar pelanggan dengan skor probabilitas churn tertinggi (warna merah).
 
 📈 Business Impact
@@ -45,3 +45,4 @@ Melalui solusi ini, perusahaan dapat:
 Optimasi Budget: Mengurangi pemborosan biaya pemasaran dengan hanya memberikan promo kepada pelanggan yang benar-benar berisiko tinggi sesuai prediksi model.
 
 Strategi Retensi: Memperbaiki strategi pada segmen pembayaran Electronic Check dan kontrak bulanan yang teridentifikasi memiliki tingkat churn tertinggi.
+
