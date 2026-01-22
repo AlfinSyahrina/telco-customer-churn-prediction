@@ -1,39 +1,47 @@
 📱 Telco Customer Churn Prediction & Retention Dashboard
-Project Overview
-Proyek ini merupakan solusi analisis prediktif end-to-end yang bertujuan untuk menekan angka kehilangan pelanggan (customer churn) pada perusahaan telekomunikasi. Dengan menggunakan teknik Machine Learning, proyek ini mampu mengidentifikasi pelanggan yang berpotensi berhenti berlangganan sebelum hal itu terjadi, sehingga tim operasional dapat melakukan tindakan pencegahan yang tepat sasaran.
+📋 Project Overview
+Proyek ini bertujuan untuk memprediksi probabilitas pelanggan berhenti berlangganan (churn) pada perusahaan telekomunikasi menggunakan Machine Learning. Berbeda dengan analisis deskriptif biasa, proyek ini berfokus pada Analisis Prediktif untuk menghasilkan daftar prioritas pelanggan berisiko tinggi (High-Risk Customers) sehingga tim retensi dapat melakukan tindakan pencegahan secara proaktif.
 
 🚀 Key Features & Workflow
 1. Data Pipeline & Machine Learning (Python)
-Exploratory Data Analysis (EDA): Mengidentifikasi korelasi antara jenis kontrak, metode pembayaran, dan biaya bulanan terhadap status churn.
+Exploratory Data Analysis (EDA): Mengidentifikasi korelasi antara jenis kontrak, metode pembayaran, dan biaya terhadap status churn.
 
-Data Preprocessing: Melakukan pembersihan data, penanganan missing values pada TotalCharges, dan encoding variabel kategorikal.
+Data Preprocessing: Melakukan konversi tipe data numerik pada TotalCharges, menangani missing values, dan menghapus fitur non-prediktif seperti customerID untuk pemrosesan model.
 
-Predictive Modeling: Mengembangkan model Random Forest Classifier dengan tingkat akurasi ~80% untuk memprediksi probabilitas churn setiap pelanggan secara individu.
+Feature Engineering: Menggunakan One-Hot Encoding untuk mengubah data kategorikal menjadi format biner agar dapat diproses oleh algoritma.
+
+Predictive Modeling: Mengembangkan model Random Forest Classifier dengan tingkat akurasi ~78%.
 
 2. Database Integration (PostgreSQL)
-Mengintegrasikan hasil prediksi Machine Learning (skor probabilitas) kembali ke database PostgreSQL.
+Automation: Menggunakan SQLAlchemy dan driver pg8000 untuk mengotomatisasi pengiriman data hasil prediksi dari Python ke database.
 
-Membuat skema data yang tervalidasi sebagai Single Source of Truth untuk kebutuhan pelaporan bisnis.
+Single Source of Truth: Menyimpan hasil prediksi akhir di tabel churn_predictions_results sebagai sumber data tunggal untuk kebutuhan laporan bisnis.
 
 3. Business Intelligence Dashboard (Power BI)
-Dashboard dirancang untuk bersifat Action-Oriented (berorientasi pada tindakan) dengan fitur utama:
+Dashboard dirancang untuk bersifat Action-Oriented (berorientasi pada tindakan):
 
-Churn Risk Monitor: Menampilkan daftar prioritas pelanggan "Hampir Kabur" berdasarkan skor risiko tertinggi.
+Churn Risk Monitor: Menampilkan daftar prioritas pelanggan berisiko tinggi. Saat ini terdeteksi 1.400 High-Risk Customers.
 
-AI-Powered Insights: Menggunakan visual Key Influencers untuk menemukan secara otomatis bahwa pelanggan dengan kontrak Month-to-Month memiliki risiko churn 3.5x lebih tinggi.
+AI-Powered Insights: Visualisasi Key Influencers yang secara otomatis menemukan bahwa jenis kontrak Month-to-month memiliki risiko churn paling tinggi (89.45%).
 
-Operational Action Table: Tabel dinamis yang memungkinkan tim Customer Service langsung melihat data teknis pelanggan (Tenure, Contract, Charges) untuk strategi retensi.
+Operational Action Table: Tabel dinamis yang menyertakan skor Churn_Probability (skala 0.0 - 1.0) untuk membantu tim operasional menentukan prioritas intervensi.
 
 🛠️ Tech Stack
-Language: Python (Pandas, Scikit-Learn, SQLAlchemy).
+Language: Python (Pandas, Scikit-Learn, SQLAlchemy, Joblib).
 
 Database: PostgreSQL (pg8000).
 
 Tool: Power BI Desktop.
 
-📊 Business Impact
-Melalui dashboard ini, perusahaan dapat:
+Dataset: Telco Customer Churn Dataset (Kaggle)
 
-Mengurangi pemborosan biaya pemasaran dengan hanya memberikan promo kepada pelanggan yang benar-benar berisiko tinggi.
+📊 Dashboard Visualization
+![Telco Churn Dashboard](dashboard/Nama_File_Gambar.png)
+Dashboard operasional yang menunjukkan daftar pelanggan dengan skor probabilitas churn tertinggi (warna merah).
 
-Memperbaiki strategi produk pada segmen layanan internet atau metode pembayaran yang memiliki tingkat kegagalan retensi tertinggi.
+📈 Business Impact
+Melalui solusi ini, perusahaan dapat:
+
+Optimasi Budget: Mengurangi pemborosan biaya pemasaran dengan hanya memberikan promo kepada pelanggan yang benar-benar berisiko tinggi sesuai prediksi model.
+
+Strategi Retensi: Memperbaiki strategi pada segmen pembayaran Electronic Check dan kontrak bulanan yang teridentifikasi memiliki tingkat churn tertinggi.
