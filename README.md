@@ -1,4 +1,5 @@
 📱 Telco Customer Churn Prediction & Retention Dashboard
+
 📋 Project Overview
 Proyek ini bertujuan untuk memprediksi probabilitas pelanggan berhenti berlangganan (churn) pada perusahaan telekomunikasi menggunakan Machine Learning. Berbeda dengan analisis deskriptif biasa, proyek ini berfokus pada Analisis Prediktif untuk menghasilkan daftar prioritas pelanggan berisiko tinggi (High-Risk Customers) sehingga tim retensi dapat melakukan tindakan pencegahan secara proaktif.
 
@@ -45,4 +46,5 @@ Melalui solusi ini, perusahaan dapat:
 Optimasi Budget: Mengurangi pemborosan biaya pemasaran dengan hanya memberikan promo kepada pelanggan yang benar-benar berisiko tinggi sesuai prediksi model.
 
 Strategi Retensi: Memperbaiki strategi pada segmen pembayaran Electronic Check dan kontrak bulanan yang teridentifikasi memiliki tingkat churn tertinggi.
+
 
